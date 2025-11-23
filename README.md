@@ -20,15 +20,62 @@ This project aligns the following MITRE ATT&CK techniques:
  I used only my Kali Machine which was set up on a NAT Network called "labnet". Labnet is completely isolated from the internet which makes it perfect for pentesting. I had 2 terminals open, 1 for the dvwa webserver which is running in a docker container, and another terminal used to scan dvwa. 
  
 ![DVWA Setup](dvwa-homelab-setup.png)
-![](.png)
+![Kali Settings](Kali.png)
 
 
 
 ## Objective
+• Discover hidden directories within a webserver
+• Highlight how hidden directories can contain useful information to gain access
+• To build a portfolio of hands on pentesting projects as well as attacking methodlogies
+•
 
 ## Tools Used
+• nmap 
+• ffuf
+• gobuster
+• nikto
 
-## Scanning Methodology
+## Scanning Methodology 
+• ffuf -u http://(dvwa-ip)/FUZZ -w /usr/share/wordlists/dirb/common.txt -mc 200
+![ffuf scan filtering only for 200 status codes](ffuf-mc200-scan.png)
+• ffuf -u http://(dvwa-ip)/FUZZ -w /usr/share/wordlists/dirbuster/directory-list-2.3.txt
+![ffuf regular scan](ffuf-regular-scan.png)
+• gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt 
+![Regular gobutser scan](gobuster-scan.png)
+• gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirbuster/directory-list-2.3.txt
+![Gobuster scan with the dirbuster wordlist](gobuster-dirbuster-scan.png)
+
+• gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt -x txt,php,js,asp,aspx,html,log,bak,conf,config,admin,old,login
+![](gobuster-extension-scan.png)
+
+• gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt -x txt,php,js,asp,aspx,html,log,bak,conf,config,admin,old,login
+![](gobuster-extension-scan2.png)
+
+• gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt -x txt,php,js,asp,aspx,html,log,bak,conf,config,admin,old,login -b 403, 404 -r 
+![](gobuster-exclude403.png)
+
+• gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt -x txt,php,js,asp,aspx,html,log,bak,conf,config,admin,old,login
+![](gobuster-extension-scan3.png)
+
+• gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt -r
+![](.png)
+
+• gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/seclists/Web-Content/raft-large-directories -x txt,php,js,asp,aspx,html,log,bak,conf,config,admin,old,login
+![](gobuster-Seclist-scan.png)
+
+• nmap -p 80 --script http-enum (dvwa-ip)
+• nmap -p 80 --script http-title (dvwa-ip)
+![A scan against dvwa using nmaps http scripts](http-scripts.png)
+
+• nmap -A -p 80 (dvwa-ip)
+![Running an aggressive scan against dvwa](nmap-A-scan.png)
+
+• nikto -h (dvwa-ip) -C all
+![](nikto-scan1.png)
+![Running a nikto scan to see if there's any difference in results](nikto-scan2.png)
+
+
 
 ## Importance
 
