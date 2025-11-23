@@ -18,7 +18,11 @@ This project aligns the following MITRE ATT&CK techniques:
 ## Architecture
 
  I used only my Kali Machine which was set up on a NAT Network called "labnet". Labnet is completely isolated from the internet which makes it perfect for pentesting. I had 2 terminals open, 1 for the dvwa webserver which is running in a docker container, and another terminal used to scan dvwa. 
-![DVWA Setup]()
+ 
+![DVWA Setup](dvwa-homelab-setup.png)
+![](.png)
+
+
 
 ## Objective
 
