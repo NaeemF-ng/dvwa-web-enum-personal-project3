@@ -41,7 +41,7 @@ This project aligns the following MITRE ATT&CK techniques:
 • ffuf -u http://(dvwa-ip)/FUZZ -w /usr/share/wordlists/dirbuster/directory-list-2.3.txt
 ![ffuf regular scan](ffuf-regular-scan.png)
 ![ffuf regular scan](ffuf-regular-scan2.png)
-• gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.tx 
+• gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt 
 ![Regular gobuster scan ](gobuster-scan.png)
 • gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt -r
 ![Regular gobuster scan and another one for redirects](gobuster-scanr2.png)
@@ -78,9 +78,21 @@ This project aligns the following MITRE ATT&CK techniques:
 ![](nikto-scan2.png)
 
 
-
 ## Importance
 
+• Finding hidden directories is very important as they can contain crucial information about a webserver or website resulting in an attacker gaining access. Things that shouldn't be public rely within these directories such as admin portals, backup pages, config files, admin panels, and databaase configuration. 
+
 ## Findings
+
+![](page-surf.png)
+![](page-surf2.png)
+![](page-surf2findings.png)
+![](page-surf3.png)
+![](page-surf3-findings.png)
+![](page-surf-4.png)
+![](page-surf-4]54.png)
+
+
+
 
 ## Lessons Learned
