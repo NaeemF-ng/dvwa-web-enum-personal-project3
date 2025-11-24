@@ -51,22 +51,15 @@ This project aligns the following MITRE ATT&CK techniques:
 ![Gobuster scan with the dirbuster wordlist](gobuster-dirbuster-scan.png)
 
 • gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt -x txt,php,js,asp,aspx,html,log,bak,conf,config,admin,old,login
-![](gobuster-extension-scan.png)
+![Gobuster scan for extensions](gobuster-extension-scan.png)
 ![](gobuster-extension-scan2.png)
+![](gobuster-extension-scan3.png)
 
-
-• gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt -x txt,php,js,asp,aspx,html,log,bak,conf,config,admin,old,login
-![](gobuster-extension-scan2.png)
 
 • gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt -x txt,php,js,asp,aspx,html,log,bak,conf,config,admin,old,login -b 403, 404 -r 
 ![](gobuster-exclude403.png)
 ![](gobuster-exclude403-2.png)
 
-• gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt -x txt,php,js,asp,aspx,html,log,bak,conf,config,admin,old,login
-![](gobuster-extension-scan3.png)
-
-• gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt -r
-![](.png)
 
 • gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/seclists/Discovery/Web-Content/raft-large-directories -x txt,php,js,asp,aspx,html,log,bak,conf,config,admin,old,login
 ![](gobuster-Seclist-scan.png)
