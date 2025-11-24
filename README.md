@@ -66,8 +66,10 @@ This project aligns the following MITRE ATT&CK techniques:
 • gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt -r
 ![](.png)
 
-• gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/seclists/Web-Content/raft-large-directories -x txt,php,js,asp,aspx,html,log,bak,conf,config,admin,old,login
+• gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/seclists/Discovery/Web-Content/raft-large-directories -x txt,php,js,asp,aspx,html,log,bak,conf,config,admin,old,login
 ![](gobuster-Seclist-scan.png)
+![](gobuster-Seclist-scan2.png)
+
 
 • nmap -p 80 --script http-enum (dvwa-ip)
 • nmap -p 80 --script http-title (dvwa-ip)
@@ -77,8 +79,8 @@ This project aligns the following MITRE ATT&CK techniques:
 ![Running an aggressive scan against dvwa](nmap-A-scan.png)
 
 • nikto -h (dvwa-ip) -C all
-![](nikto-scan1.png)
-![Running a nikto scan to see if there's any difference in results](nikto-scan2.png)
+![Running a nikto scan to see if there's any difference in results](nikto-scan1.png)
+![](nikto-scan2.png)
 
 
 
