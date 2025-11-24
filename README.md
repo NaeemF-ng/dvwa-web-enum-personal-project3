@@ -18,10 +18,9 @@ This project aligns the following MITRE ATT&CK techniques:
 ## Architecture
 
  I used only my Kali Machine which was set up on a NAT Network called "labnet". Labnet is completely isolated from the internet which makes it perfect for pentesting. I had 2 terminals open, 1 for the dvwa webserver which is running in a docker container, and another terminal used to scan dvwa. 
- 
-![DVWA Setup](dvwa-homelab-setup.png)
-![Kali Settings](Kali.png)
 
+![Kali Settings](Kali.png)
+![DVWA Setup](dvwa-homelab-setup.png)
 
 
 ## Objective
@@ -42,18 +41,24 @@ This project aligns the following MITRE ATT&CK techniques:
 • ffuf -u http://(dvwa-ip)/FUZZ -w /usr/share/wordlists/dirbuster/directory-list-2.3.txt
 ![ffuf regular scan](ffuf-regular-scan.png)
 • gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt 
-![Regular gobutser scan](gobuster-scan.png)
+![Regular gobuster scan and another one for redirects](gobuster-scan.png)
+![Regular gobuster scan and another one for redirects](gobuster-scanr2.png)
+
+
 • gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirbuster/directory-list-2.3.txt
 ![Gobuster scan with the dirbuster wordlist](gobuster-dirbuster-scan.png)
 
 • gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt -x txt,php,js,asp,aspx,html,log,bak,conf,config,admin,old,login
 ![](gobuster-extension-scan.png)
+![](gobuster-extension-scan2.png)
+
 
 • gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt -x txt,php,js,asp,aspx,html,log,bak,conf,config,admin,old,login
 ![](gobuster-extension-scan2.png)
 
 • gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt -x txt,php,js,asp,aspx,html,log,bak,conf,config,admin,old,login -b 403, 404 -r 
 ![](gobuster-exclude403.png)
+![](gobuster-exclude403-2.png)
 
 • gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt -x txt,php,js,asp,aspx,html,log,bak,conf,config,admin,old,login
 ![](gobuster-extension-scan3.png)
