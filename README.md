@@ -40,8 +40,10 @@ This project aligns the following MITRE ATT&CK techniques:
 ![ffuf scan filtering only for 200 status codes](ffuf-mc200-scan.png)
 • ffuf -u http://(dvwa-ip)/FUZZ -w /usr/share/wordlists/dirbuster/directory-list-2.3.txt
 ![ffuf regular scan](ffuf-regular-scan.png)
-• gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt 
-![Regular gobuster scan and another one for redirects](gobuster-scan.png)
+![ffuf regular scan](ffuf-regular-scan2.png)
+• gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.tx 
+![Regular gobuster scan ](gobuster-scan.png)
+• gobuster dir -u http://(dvwa-ip) -w /usr/share/wordlists/dirb/common.txt -r
 ![Regular gobuster scan and another one for redirects](gobuster-scanr2.png)
 
 
