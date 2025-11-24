@@ -85,10 +85,14 @@ This project aligns the following MITRE ATT&CK techniques:
 ## Findings
 
 ![](page-surf.png)
+Here is the config page for dvwa, it contained a directory listing. I clicked on each php file and there wasn't anything in it.
 ![](page-surf2.png)
 ![](page-surf2findings.png)
+I found the documentation for dvwa which goes into depth regarding how the webserver (architecture) is setup
 ![](page-surf3.png)
+The nikto scan provided me with the "/" directory also knownn as the root directory which was an admin login page which isn't supposed to be accessible to the public, which is displayed in the next screenshot
 ![](page-surf3-findings.png)
+I visited the robots.txt directory which is commonly targeted by attackers, it also led me to the admin page
 ![](page-surf-4.png)
 ![](page-surf-4]54.png)
 
