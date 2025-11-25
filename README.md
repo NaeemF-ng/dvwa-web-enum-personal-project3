@@ -1,12 +1,30 @@
 # dvwa-web-enum-personal-project3
 
+### Table of Contents
+
+[Overview](##Overview)
+[MITRE ATT&CK Mapping](##MITRE-ATT&CK-Mapping)
+[Objective](##Objective)
+[Tools Used](##Tools-Used)
+[Scanning Methodology / Wordlists used](##Scanning Methodology / Wordlists used)
+[Importance](##Importance)
+[Findings](##Findings)
+[Lessons Learned](##Lessons Learned)
+
+
 This is a personal project that demonstrates highlights critical flaws of target that lacks propper security measures through the process of web enumeration using a variety of tools which include ffuf, nmap, gobuster, and nikto. It gives insights on how different tools and wordlists yield different results and directories while elaborating on how an attacker can use these vulnerabilities to gain access.
 
 ## Overview 
 
-In this personal project I will be going into depth regarding web enumeration in my homelab, a safe environment isolated from the internet to shed light on the importance of finding hidden directories. I used kali linux and an intentionally vulnerable webserver known as damn vulnerable web app (dvwa).  I use a number of tools inlcuding gobuster, nikto, nmap, and ffuf which are very essential for web enumeration to showcase how these hidden directories can contain crucial information about a webserver or website resulting in an attacker gaining access, recovering crucial information such as credentials and configurations, and ssh keys.
+In this personal project I will be going into depth regarding web enumeration in my homelab, a safe environment isolated from the internet. The main focus is to discover hidden directories, understand their purpose, and show how attackers build an initial foothold during a web application penetration test. 
 
-## MITRE ATT&CK Mapping
+This project demonstrates:
+
+• Understanding of reconnaissance & enumeration, and pentesting skills
+• Ability to use multiple enumeration tools
+• Interpreting scan results and identifying exposed or unnecessary directories
+
+## MITRE-ATT&CK-Mapping
 
 This project aligns the following MITRE ATT&CK techniques:
 
@@ -17,25 +35,35 @@ This project aligns the following MITRE ATT&CK techniques:
 
 ## Architecture
 
- I used only my Kali Machine which was set up on a NAT Network called "labnet". Labnet is completely isolated from the internet which makes it perfect for pentesting. I had 2 terminals open, 1 for the dvwa webserver which is running in a docker container, and another terminal used to scan dvwa. 
+• Attacker Machine: Kali Linux
+• Target Machine: DVWA running in docker
+• Network: Virtualbox NAT-Network (Labnet)
+• DVWA Access: dvwa-ip (has been redacted as a security measure)
 
 ![Kali Settings](Kali.png)
 ![DVWA Setup](dvwa-homelab-setup.png)
 
 
 ## Objective
-• Discover hidden directories within a webserver
-• Highlight how hidden directories can contain useful information to gain access
-• To build a portfolio of hands on pentesting projects as well as attacking methodlogies
-•
+Discover hidden and sensitive directories on a vulnerable web application (DVWA) using common enumeration tools to replicate an attackers behavior.
 
-## Tools Used
+Hidden directories may include:
+• Backup files
+• Developer notes
+• Sensitive config files
+• Old versions
+• Upload directories
+These can often leads to full compromise and information being leaked.
+
+• To build a portfolio of hands on pentesting projects as well as attacking methodlogies
+
+## Tools-Used
 • nmap 
 • ffuf
 • gobuster
 • nikto
 
-## Scanning Methodology 
+## Scanning Methodology / Wordlists used
 • ffuf -u http://(dvwa-ip)/FUZZ -w /usr/share/wordlists/dirb/common.txt -mc 200
 ![ffuf scan filtering only for 200 status codes](ffuf-mc200-scan.png)
 • ffuf -u http://(dvwa-ip)/FUZZ -w /usr/share/wordlists/dirbuster/directory-list-2.3.txt
@@ -72,6 +100,7 @@ This project aligns the following MITRE ATT&CK techniques:
 
 • nmap -A -p 80 (dvwa-ip)
 ![Running an aggressive scan against dvwa](nmap-A-scan.png)
+• The title of the application was found
 
 • nikto -h (dvwa-ip) -C all
 ![Running a nikto scan to see if there's any difference in results](nikto-scan1.png)
@@ -107,7 +136,8 @@ I visited the robots.txt directory which is commonly targeted by attackers due t
 ## Lessons Learned
 • How to discover hidden directories within a vulnerable web server leading to potential attack surfaces
 • Fuzzing with the ffuf tool 
-• The importance of using different wordlists 
-
+• The importance of using different wordlists and how it affects what can be found
+• Some directories can lead to critical vulnerabilities
+• Why mitigation is so essential to prevent sensitive information from being leaked
 
 
