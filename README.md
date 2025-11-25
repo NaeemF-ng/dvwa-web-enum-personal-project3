@@ -11,9 +11,6 @@
 [Findings](##Findings)
 [Lessons Learned](##Lessons-Learned)
 
-
-This is a personal project that demonstrates highlights critical flaws of target that lacks propper security measures through the process of web enumeration using a variety of tools which include ffuf, nmap, gobuster, and nikto. It gives insights on how different tools and wordlists yield different results and directories while elaborating on how an attacker can use these vulnerabilities to gain access.
-
 ## Overview 
 
 In this personal project I will be going into depth regarding web enumeration in my homelab, a safe environment isolated from the internet. The main focus is to discover hidden directories, understand their purpose, and show how attackers build an initial foothold during a web application penetration test. 
