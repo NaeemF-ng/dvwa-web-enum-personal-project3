@@ -82,8 +82,8 @@ This project aligns the following MITRE ATT&CK techniques:
 
 • Finding hidden directories is very important as they can contain crucial information about a webserver or website resulting in an attacker gaining access. Things that shouldn't be public rely within these directories such as admin portals, backup pages, config files, admin panels, and database configuration. 
 
-• I wanted to highlight how important it is to use the multiple wordlists. As you'll see in the screenshots within my findings you'll see that I discover the same directories with default wordlists, but when I use one of the wordlists from seclists I discover a new listing, "COPYING.txt". This is so important because that new directory may just be what allows you to gain access to the target
-![](.png)
+• I wanted to highlight how important it is to use the multiple wordlists. As you'll see in the screenshots within my findings you'll see that I discover the same directories with default wordlists, but when I use one of the wordlists from seclists I discover a new listing, "COPYING.txt". This is so important because that new directory may just be an attack surface that allows you to gain access to the target
+![](gobuster-Seclist-scan2-copy.png)
 
 
 ## Findings
@@ -103,3 +103,9 @@ I visited the robots.txt directory which is commonly targeted by attackers due t
 
 
 ## Lessons Learned
+• How to discover hidden directories within a vulnerable web server leading to potential attack surfaces
+• Fuzzing with the ffuf tool 
+• The importance of using different wordlists 
+
+
+
