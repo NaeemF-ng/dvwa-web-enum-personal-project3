@@ -80,7 +80,11 @@ This project aligns the following MITRE ATT&CK techniques:
 
 ## Importance
 
-• Finding hidden directories is very important as they can contain crucial information about a webserver or website resulting in an attacker gaining access. Things that shouldn't be public rely within these directories such as admin portals, backup pages, config files, admin panels, and databaase configuration. 
+• Finding hidden directories is very important as they can contain crucial information about a webserver or website resulting in an attacker gaining access. Things that shouldn't be public rely within these directories such as admin portals, backup pages, config files, admin panels, and database configuration. 
+
+• I wanted to highlight how important it is to use the multiple wordlists. As you'll see in the screenshots within my findings you'll see that I discover the same directories with default wordlists, but when I use one of the wordlists from seclists I discover a new listing, "COPYING.txt". This is so important because that new directory may just be what allows you to gain access to the target
+![](gobuster-Seclist-scan2.png)
+
 
 ## Findings
 
@@ -92,10 +96,9 @@ I found the documentation for dvwa which goes into depth regarding how the webse
 ![](page-surf3.png)
 The nikto scan provided me with the "/" directory also knownn as the root directory which was an admin login page which isn't supposed to be accessible to the public, which is displayed in the next screenshot
 ![](page-surf3-findings.png)
-I visited the robots.txt directory which is commonly targeted by attackers, it also led me to the admin page
+I visited the robots.txt directory which is commonly targeted by attackers due to the fact that developers put sensitive paths within here, it also led me to the admin page
 ![](page-surf-4.png)
 ![](page-surf-4]54.png)
-
 
 
 
