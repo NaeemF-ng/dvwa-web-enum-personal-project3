@@ -21,15 +21,6 @@ This project demonstrates:
 • Ability to use multiple enumeration tools
 • Interpreting scan results and identifying exposed or unnecessary directories
 
-## MITRE-ATT&CK-Mapping
-
-This project aligns the following MITRE ATT&CK techniques:
-
-• TA0043 - Reconnaissance, identifying the victim's environment before attacking
-• T1595 - Scanning the target to identify weaknesses, architecture, and attack surfaces
-• T1595.001 - Scanning for Vulnerable or Exposed Web Directories (The main technique of this project)
-• T1594 - Search Victim-Owned Websites
-
 ## Architecture
 
 • Attacker Machine: Kali Linux
@@ -137,4 +128,12 @@ I visited the robots.txt directory which is commonly targeted by attackers due t
 • Some directories can lead to critical vulnerabilities
 • Why mitigation is so essential to prevent sensitive information from being leaked
 
+## MITRE-ATT&CK-Mapping
+
+This project aligns the following MITRE ATT&CK techniques:
+
+• TA0043 - Reconnaissance, identifying the victim's environment before attacking
+• T1595 - Scanning the target to identify weaknesses, architecture, and attack surfaces
+• T1595.001 - Scanning for Vulnerable or Exposed Web Directories (The main technique of this project)
+• T1594 - Search Victim-Owned Websites
 
