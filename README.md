@@ -6,10 +6,10 @@
 [MITRE ATT&CK Mapping](##MITRE-ATT&CK-Mapping)
 [Objective](##Objective)
 [Tools Used](##Tools-Used)
-[Scanning Methodology / Wordlists used](##Scanning Methodology / Wordlists used)
+[Scanning Methodology / Wordlists used](##Scanning-Methodology-/-Wordlists used)
 [Importance](##Importance)
 [Findings](##Findings)
-[Lessons Learned](##Lessons Learned)
+[Lessons Learned](##Lessons-Learned)
 
 
 This is a personal project that demonstrates highlights critical flaws of target that lacks propper security measures through the process of web enumeration using a variety of tools which include ffuf, nmap, gobuster, and nikto. It gives insights on how different tools and wordlists yield different results and directories while elaborating on how an attacker can use these vulnerabilities to gain access.
@@ -63,7 +63,7 @@ These can often leads to full compromise and information being leaked.
 • gobuster
 • nikto
 
-## Scanning Methodology / Wordlists used
+## Scanning Methodology-/-Wordlists-used
 • ffuf -u http://(dvwa-ip)/FUZZ -w /usr/share/wordlists/dirb/common.txt -mc 200
 ![ffuf scan filtering only for 200 status codes](ffuf-mc200-scan.png)
 • ffuf -u http://(dvwa-ip)/FUZZ -w /usr/share/wordlists/dirbuster/directory-list-2.3.txt
@@ -133,7 +133,7 @@ I visited the robots.txt directory which is commonly targeted by attackers due t
 
 
 
-## Lessons Learned
+## Lessons-Learned
 • How to discover hidden directories within a vulnerable web server leading to potential attack surfaces
 • Fuzzing with the ffuf tool 
 • The importance of using different wordlists and how it affects what can be found
