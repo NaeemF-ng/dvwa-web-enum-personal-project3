@@ -84,6 +84,8 @@ This project aligns the following MITRE ATT&CK techniques:
 
 • I wanted to highlight how important it is to use the multiple wordlists. As you'll see in the screenshots within my findings you'll see that I discover the same directories with default wordlists, but when I use one of the wordlists from seclists I discover a new listing, "COPYING.txt". This is so important because that new directory may just be an attack surface that allows you to gain access to the target
 ![](gobuster-Seclist-scan2-copy.png)
+It lead to a liscensing page however, it won't always lead to this.
+![](Copyingtxt.png)
 
 
 ## Findings
