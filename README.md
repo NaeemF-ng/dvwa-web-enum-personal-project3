@@ -6,7 +6,7 @@
 [MITRE ATT&CK Mapping](##MITRE-ATT&CK-Mapping)
 [Objective](##Objective)
 [Tools Used](##Tools-Used)
-[Scanning-Methodology-/-Wordlists-used](##Scanning-Methodology-/-Wordlists used)
+[Scanning-Methodology-/-Wordlists-used](##Scanning-Methodology-/-Wordlists-used)
 [Importance](##Importance)
 [Findings](##Findings)
 [Lessons Learned](##Lessons-Learned)
